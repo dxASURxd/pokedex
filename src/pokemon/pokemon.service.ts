@@ -74,5 +74,7 @@ export class PokemonService {
     }
     throw new InternalServerErrorException(`Can't create Pokmon - ${error.errmsg}`);
   }
+
   
+
 }
