@@ -70,7 +70,6 @@ export class PokemonService {
 
   private handleExceptions( error: any ){
     if (error.code === 11000) {
-      console.log(error);
       throw new BadRequestException(`Pokemon exist in DB ${JSON.stringify(error.keyValue)}`);
     }
     throw new InternalServerErrorException(`Can't create Pokmon - ${error.errmsg}`);
