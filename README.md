@@ -21,12 +21,15 @@ yarn start:dev
 ```
 docker-compose up -d
 ```
-
+6. Ejecutar el seed para prellenar la base de datos con el comando
+```
+localhost:3000/api/v2/seed
+```
+7. La consulta a los endpoints solo se hace con el metodo, no se necesita modificar la URL. 
 
 ## Stack usado
 * MongoDB
 * Nest
-
 
 
 
