@@ -12,7 +12,9 @@ export class PokemonService {
   constructor(
     @InjectModel(Pokemon.name)
     private readonly pokemonModel: Model<Pokemon>
-  ) { }
+  ) {
+    console.log(process.env)
+   }
 
   async create(createPokemonDto: CreatePokemonDto) {
     createPokemonDto.name = createPokemonDto.name.toLowerCase();
@@ -24,7 +26,6 @@ export class PokemonService {
     }
   }
 
-
   async findAll( paginationDto: PaginationDto ) {
     const { limit = 10, offset = 0 } = paginationDto;
 
@@ -33,7 +34,6 @@ export class PokemonService {
     .skip( offset )
     .select( '-__v' );
   }
-
 
   async findOne(term: string) {
     let pokemon: Pokemon;
